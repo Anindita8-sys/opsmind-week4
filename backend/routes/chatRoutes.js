@@ -1,27 +1,22 @@
 import express from "express"
-import Chat from "../models/chat.js"
 
 const router = express.Router()
 
-router.post("/chat", async (req,res)=>{
+let chats = []
 
-const {question,answer} = req.body
+router.post("/chat", (req, res) => {
 
-const newChat = await Chat.create({
-question,
-answer
+  const { question, answer } = req.body
+
+  const newChat = { question, answer }
+
+  chats.push(newChat)
+
+  res.json(newChat)
 })
 
-res.json(newChat)
-
-})
-
-router.get("/history", async(req,res)=>{
-
-const chats = await Chat.find().sort({time:-1})
-
-res.json(chats)
-
+router.get("/history", (req, res) => {
+  res.json(chats)
 })
 
 export default router

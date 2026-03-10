@@ -1,21 +1,77 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>OpsMind AI</title>
+<title>OpsMind AI</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f4f6f9;
+margin:0;
+}
+
+header{
+background:#111;
+color:white;
+padding:15px;
+font-size:22px;
+}
+
+.chat{
+max-width:600px;
+margin:auto;
+padding:20px;
+}
+
+.message{
+background:white;
+padding:10px;
+margin:10px 0;
+border-radius:6px;
+box-shadow:0 2px 4px rgba(0,0,0,0.1);
+}
+
+input{
+width:45%;
+padding:10px;
+margin:5px;
+}
+
+button{
+padding:10px 20px;
+background:#4CAF50;
+color:white;
+border:none;
+cursor:pointer;
+}
+
+button:hover{
+background:#45a049;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>OpsMind AI Chat</h1>
+<header>OpsMind AI Assistant</header>
 
-<input id="question" placeholder="Enter question">
-<input id="answer" placeholder="Enter answer">
+<div class="chat">
+
+<div id="history"></div>
+
+<input id="question" placeholder="Ask a question">
+
+<input id="answer" placeholder="Answer / reference">
+
+<br>
 
 <button onclick="sendChat()">Send</button>
 
-<h2>Chat History</h2>
-
-<div id="history"></div>
+</div>
 
 <script src="script.js"></script>
 
